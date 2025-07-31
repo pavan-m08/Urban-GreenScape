@@ -1,0 +1,255 @@
+/* Gallery Component Styles */
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.gallery-title {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #166534;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.gallery-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.gallery-filter-btn {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  min-width: 80px;
+}
+
+.gallery-filter-btn.active {
+  background-color: #166534;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-filter-btn.inactive {
+  background-color: #f0fdf4;
+  color: #166534;
+  border: 2px solid #bbf7d0;
+}
+
+.gallery-filter-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Special grid for Before/After sections */
+.gallery-grid.before-after {
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  max-width: 1200px;
+}
+
+.gallery-item {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-color: #22c55e;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+/* Full size images for Before/After */
+.gallery-image.before-after {
+  height: 300px;
+  object-fit: contain;
+  background-color: #f8fafc;
+}
+
+.gallery-caption {
+  padding: 1rem;
+  text-align: center;
+  color: #166534;
+  font-weight: 600;
+  font-size: 0.875rem;
+  background: linear-gradient(135deg, #f0fdf4, #f7fee7);
+}
+
+/* Enhanced caption for Before/After */
+.gallery-caption.before-after {
+  font-size: 1rem;
+  font-weight: 700;
+  padding: 1.5rem;
+}
+
+/* Modal Styles */
+.gallery-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  padding: 2rem;
+}
+
+.gallery-modal-content {
+  background: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #166534;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  z-index: 10;
+}
+
+.gallery-modal-close:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.gallery-modal-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* Full size modal images for Before/After */
+.gallery-modal-image.before-after {
+  height: 500px;
+  object-fit: contain;
+  background-color: #f8fafc;
+}
+
+.gallery-modal-caption {
+  padding: 1.5rem;
+  text-align: center;
+  color: #166534;
+  font-weight: 700;
+  font-size: 1.125rem;
+  background: linear-gradient(135deg, #f0fdf4, #f7fee7);
+}
+
+/* Enhanced modal caption for Before/After */
+.gallery-modal-caption.before-after {
+  font-size: 1.25rem;
+  padding: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .gallery-container {
+    padding: 2rem 1rem;
+  }
+  
+  .gallery-title {
+    font-size: 1.5rem;
+  }
+  
+  .gallery-filters {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .gallery-filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    min-width: 70px;
+  }
+  
+  .gallery-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .gallery-grid.before-after {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .gallery-image {
+    height: 180px;
+  }
+  
+  .gallery-image.before-after {
+    height: 250px;
+  }
+  
+  .gallery-modal-content {
+    max-width: 90vw;
+  }
+  
+  .gallery-modal-image {
+    height: 300px;
+  }
+  
+  .gallery-modal-image.before-after {
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .gallery-image {
+    height: 200px;
+  }
+  
+  .gallery-image.before-after {
+    height: 200px;
+  }
+} 
